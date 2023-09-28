@@ -28,7 +28,7 @@ const Auth = () => {
     }
 
     const response = await fetch(
-      `${process.env.REACT_APP_SERVERURL}/${endpoint}`,
+      `${process.env.REACT_APP_SERVERURL}${endpoint}`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -37,7 +37,7 @@ const Auth = () => {
     )
 
     console.log(response)
-    
+
     const data = await response.json()
     
     if (data.detail) {
